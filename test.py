@@ -37,7 +37,7 @@ query = """
 SELECT *
 FROM import_export
 WHERE foreign_country LIKE 'Germany'
-  AND date BETWEEN '2024-06-01' AND '2024-07-01';
+  AND date BETWEEN '2023-06-01' AND '2024-07-01';
 
 
 """
