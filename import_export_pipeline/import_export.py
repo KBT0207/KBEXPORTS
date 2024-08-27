@@ -3,7 +3,7 @@ import numpy as np
 from functools import lru_cache
 import time
 import re
-from logging_config import logger
+from log_file.logging_config import logger
 
 start_time = time.time()
 

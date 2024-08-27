@@ -1,6 +1,6 @@
 import pandas as pd
 import pymysql
-from import_export import KayBeeExports
+from import_export_pipeline.import_export import KayBeeExports
 
 # 'BABY CORN','POMEGRANATES ARILS', 'POMEGRANATES',"CHICKOO","GUAVA","CHILLI","MANGO","DRAGON FRUITS","OKRA","DRUMSTICK","MIX FRUITS & VEG","COCONUT",
 
