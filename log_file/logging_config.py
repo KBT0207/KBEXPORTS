@@ -13,6 +13,7 @@ if not os.path.exists(log_dir):
 # Load environment variables from .env file
 load_dotenv(".env")
 
+print(os.getenv('source_token'))
 # Get the current date for the log filename
 today_date = datetime.now().strftime('%d-%b-%Y')
 
