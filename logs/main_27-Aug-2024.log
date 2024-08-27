@@ -1,0 +1,297 @@
+2024-08-27 10:36:51,636 - main - INFO - 17 - DataFrame initialized and converted to uppercase.
+2024-08-27 10:36:51,641 - main - INFO - 22 - Starting 'apply_regex' method.
+2024-08-27 10:36:51,641 - main - INFO - 22 - Starting 'strip_columns' method.
+2024-08-27 10:36:51,641 - main - INFO - 22 - Starting 'shipment' method.
+2024-08-27 10:36:51,641 - main - DEBUG - 220 - Starting shipment method.
+2024-08-27 10:36:51,643 - main - INFO - 22 - Starting 'foreign_importer_classification' method.
+2024-08-27 10:36:51,643 - main - INFO - 194 - Starting foreign importer classification.
+2024-08-27 10:36:51,644 - main - INFO - 22 - Starting 'indian_exporter_classification' method.
+2024-08-27 10:36:51,644 - main - INFO - 159 - Starting foreign importer classification.
+2024-08-27 10:36:51,645 - main - INFO - 22 - Starting 'product_classification' method.
+2024-08-27 10:36:51,646 - main - INFO - 41 - Starting product classification.
+2024-08-27 10:36:51,646 - main - INFO - 22 - Starting 'data_cleaning' method.
+2024-08-27 10:36:51,647 - main - INFO - 32 - Starting data cleaning process.
+2024-08-27 10:36:51,723 - main - INFO - 34 - Dropped duplicates, remaining rows: 11
+2024-08-27 10:36:51,800 - main - INFO - 36 - Converted 'DATE' column to datetime format.
+2024-08-27 10:36:51,802 - main - INFO - 26 - Finished 'data_cleaning' method in 0.16 seconds.
+2024-08-27 10:36:51,806 - main - INFO - 44 - Initial classification set to 'MIXED ITEMS'.
+2024-08-27 10:36:51,851 - main - INFO - 104 - Condition 'COCONUT' matched 0 rows.
+2024-08-27 10:36:51,855 - main - INFO - 104 - Condition 'FRESH GARLIC' matched 0 rows.
+2024-08-27 10:36:51,867 - main - INFO - 104 - Condition 'MIX FRUITS & VEG' matched 2 rows.
+2024-08-27 10:36:51,870 - main - INFO - 104 - Condition 'DRUMSTICK' matched 0 rows.
+2024-08-27 10:36:51,872 - main - INFO - 104 - Condition 'DRAGON FRUITS' matched 1 rows.
+2024-08-27 10:36:51,873 - main - INFO - 104 - Condition 'MANGO' matched 5 rows.
+2024-08-27 10:36:51,874 - main - INFO - 104 - Condition 'BABY CORN' matched 0 rows.
+2024-08-27 10:36:51,875 - main - INFO - 104 - Condition 'POMEGRANATES' matched 0 rows.
+2024-08-27 10:36:51,876 - main - INFO - 104 - Condition 'POMEGRANATES ARILS' matched 0 rows.
+2024-08-27 10:36:51,877 - main - INFO - 104 - Condition 'OKRA' matched 3 rows.
+2024-08-27 10:36:51,877 - main - INFO - 104 - Condition 'CHILLI' matched 0 rows.
+2024-08-27 10:36:51,881 - main - INFO - 104 - Condition 'GUAVA' matched 0 rows.
+2024-08-27 10:36:51,883 - main - INFO - 104 - Condition 'CHICKOO' matched 0 rows.
+2024-08-27 10:36:51,884 - main - INFO - 104 - Condition 'DUDHI' matched 0 rows.
+2024-08-27 10:36:51,885 - main - INFO - 106 - Finished product classification.
+2024-08-27 10:36:51,887 - main - INFO - 26 - Finished 'product_classification' method in 0.24 seconds.
+2024-08-27 10:36:51,898 - main - INFO - 188 - Finished foreign importer classification.
+2024-08-27 10:36:51,898 - main - INFO - 26 - Finished 'indian_exporter_classification' method in 0.25 seconds.
+2024-08-27 10:36:51,907 - main - INFO - 215 - Finished foreign importer classification.
+2024-08-27 10:36:51,907 - main - INFO - 26 - Finished 'foreign_importer_classification' method in 0.26 seconds.
+2024-08-27 10:36:51,907 - main - DEBUG - 222 - Classified foreign importer. DataFrame shape: (11, 33)
+2024-08-27 10:36:51,949 - main - DEBUG - 224 - Calculated DateQty column. Sample data: 0    2800
+1     589
+2     589
+3    5410
+4     396
+Name: DateQty, dtype: int64
+2024-08-27 10:36:51,949 - main - DEBUG - 226 - Created Unique For Shipment column. Sample data: 0    2024-06-02JJ GLOBAL TRADER GMBHKHUSHI INTERNAT...
+1    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+2    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+3    2024-06-04JJ GLOBAL TRADER GMBHKHUSHI INTERNAT...
+4    2024-06-13TRANSFOOD GMBHTHREE CIRCLESSAHAR AIR...
+Name: Unique For Shipment, dtype: object
+2024-08-27 10:36:51,949 - main - DEBUG - 228 - Sorted DataFrame by date, exporter, and importer.
+2024-08-27 10:36:51,961 - main - DEBUG - 231 - Shifted Unique For Shipment column. Sample data: 0    2024-06-02JJ GLOBAL TRADER GMBHKHUSHI INTERNAT...
+6    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+1    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+2    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+5    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+Name: SHIFTED, dtype: object
+2024-08-27 10:36:51,964 - main - DEBUG - 233 - Created SHIPMENT_CHECK column. Sample data: 0    0
+6    1
+1    0
+2    0
+5    0
+Name: SHIPMENT_CHECK, dtype: int32
+2024-08-27 10:36:51,965 - main - INFO - 26 - Finished 'shipment' method in 0.32 seconds.
+2024-08-27 10:36:51,971 - main - INFO - 26 - Finished 'strip_columns' method in 0.33 seconds.
+2024-08-27 10:36:51,971 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,972 - main - INFO - 111 - Calculating quantity from description: OKRA, quantity: 2000
+2024-08-27 10:36:51,972 - main - INFO - 120 - Quantity converted to float: 2000.0
+2024-08-27 10:36:51,973 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,973 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,974 - main - INFO - 111 - Calculating quantity from description: BADAMI MANGO, quantity: 800
+2024-08-27 10:36:51,974 - main - INFO - 120 - Quantity converted to float: 800.0
+2024-08-27 10:36:51,974 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,975 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,975 - main - INFO - 111 - Calculating quantity from description: INDIAN FRESH OKRA, quantity: 350
+2024-08-27 10:36:51,976 - main - INFO - 120 - Quantity converted to float: 350.0
+2024-08-27 10:36:51,976 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,976 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,976 - main - INFO - 111 - Calculating quantity from description: INDIAN FRESH MIXED VEGETABLES, quantity: 109
+2024-08-27 10:36:51,978 - main - INFO - 120 - Quantity converted to float: 109.0
+2024-08-27 10:36:51,978 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,979 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,979 - main - INFO - 111 - Calculating quantity from description: INDIAN FRESH ALPHONSO MANGO (6+6) JOTTA, quantity: 110
+2024-08-27 10:36:51,979 - main - INFO - 120 - Quantity converted to float: 110.0
+2024-08-27 10:36:51,980 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,981 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,982 - main - INFO - 111 - Calculating quantity from description: INDIAN FRESH DRAGON FRUIT, quantity: 20
+2024-08-27 10:36:51,982 - main - INFO - 120 - Quantity converted to float: 20.0
+2024-08-27 10:36:51,983 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,983 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,984 - main - INFO - 111 - Calculating quantity from description: OKRA, quantity: 2750
+2024-08-27 10:36:51,984 - main - INFO - 120 - Quantity converted to float: 2750.0
+2024-08-27 10:36:51,986 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,988 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,988 - main - INFO - 111 - Calculating quantity from description: KESAR MANGO, quantity: 560
+2024-08-27 10:36:51,988 - main - INFO - 120 - Quantity converted to float: 560.0
+2024-08-27 10:36:51,988 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,989 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,989 - main - INFO - 111 - Calculating quantity from description: ALPHONSO MANGO, quantity: 700
+2024-08-27 10:36:51,989 - main - INFO - 120 - Quantity converted to float: 700.0
+2024-08-27 10:36:51,990 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,990 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,991 - main - INFO - 111 - Calculating quantity from description: BADAMI MANGO, quantity: 1400
+2024-08-27 10:36:51,991 - main - INFO - 120 - Quantity converted to float: 1400.0
+2024-08-27 10:36:51,991 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,992 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:51,992 - main - INFO - 111 - Calculating quantity from description: MIX VEGETABLES (NTWT 5 KGS PER BOX) (NOS CAN READ AS BOXES ), quantity: 396
+2024-08-27 10:36:51,994 - main - INFO - 120 - Quantity converted to float: 396.0
+2024-08-27 10:36:51,994 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:51,996 - main - INFO - 249 - Regex applied to product descriptions and quantities.
+2024-08-27 10:36:51,996 - main - ERROR - 267 - Error calculating net weight for row 0: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:51,997 - main - ERROR - 267 - Error calculating net weight for row 6: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:51,998 - main - ERROR - 267 - Error calculating net weight for row 1: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:51,998 - main - ERROR - 267 - Error calculating net weight for row 2: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:51,999 - main - ERROR - 267 - Error calculating net weight for row 5: Unknown UNIT_TYPE: none
+2024-08-27 10:36:51,999 - main - ERROR - 267 - Error calculating net weight for row 7: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,000 - main - ERROR - 267 - Error calculating net weight for row 3: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,000 - main - ERROR - 267 - Error calculating net weight for row 8: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,001 - main - ERROR - 267 - Error calculating net weight for row 9: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,002 - main - ERROR - 267 - Error calculating net weight for row 10: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,004 - main - INFO - 334 - Starting to apply 'shipment_criteria' function.
+2024-08-27 10:36:52,005 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=2800
+2024-08-27 10:36:52,005 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,006 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=1, DateQty=2800
+2024-08-27 10:36:52,006 - main - INFO - 308 - Condition met: SHIPMENT_CHECK=1 and DateQty<=3000, assigning A_SHIPMENT=1
+2024-08-27 10:36:52,006 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=589
+2024-08-27 10:36:52,007 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,007 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=589
+2024-08-27 10:36:52,007 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,007 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=589
+2024-08-27 10:36:52,007 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,007 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=1, DateQty=589
+2024-08-27 10:36:52,007 - main - INFO - 308 - Condition met: SHIPMENT_CHECK=1 and DateQty<=3000, assigning A_SHIPMENT=1
+2024-08-27 10:36:52,007 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=5410
+2024-08-27 10:36:52,007 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,007 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=5410
+2024-08-27 10:36:52,011 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,011 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=5410
+2024-08-27 10:36:52,012 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,012 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=1, DateQty=5410
+2024-08-27 10:36:52,012 - main - INFO - 311 - Condition met: SHIPMENT_CHECK=1 and DateQty<=6000, assigning A_SHIPMENT=2
+2024-08-27 10:36:52,013 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=1, DateQty=396
+2024-08-27 10:36:52,014 - main - INFO - 308 - Condition met: SHIPMENT_CHECK=1 and DateQty<=3000, assigning A_SHIPMENT=1
+2024-08-27 10:36:52,016 - main - INFO - 336 - Successfully applied 'shipment_criteria' function.
+2024-08-27 10:36:52,018 - main - INFO - 26 - Finished 'apply_regex' method in 0.38 seconds.
+2024-08-27 10:36:52,270 - main - INFO - 22 - Starting 'generate_product_report' method.
+2024-08-27 10:36:52,271 - main - INFO - 22 - Starting 'product_report' method.
+2024-08-27 10:36:52,271 - main - INFO - 342 - Starting the 'product_report' method.
+2024-08-27 10:36:52,272 - main - INFO - 22 - Starting 'apply_regex' method.
+2024-08-27 10:36:52,272 - main - INFO - 22 - Starting 'strip_columns' method.
+2024-08-27 10:36:52,272 - main - INFO - 22 - Starting 'shipment' method.
+2024-08-27 10:36:52,273 - main - DEBUG - 220 - Starting shipment method.
+2024-08-27 10:36:52,273 - main - INFO - 22 - Starting 'foreign_importer_classification' method.
+2024-08-27 10:36:52,273 - main - INFO - 26 - Finished 'foreign_importer_classification' method in 0.00 seconds.
+2024-08-27 10:36:52,274 - main - DEBUG - 222 - Classified foreign importer. DataFrame shape: (11, 35)
+2024-08-27 10:36:52,277 - main - DEBUG - 224 - Calculated DateQty column. Sample data: 0    2800
+1     589
+2     589
+3    5410
+4     396
+Name: DateQty, dtype: int64
+2024-08-27 10:36:52,279 - main - DEBUG - 226 - Created Unique For Shipment column. Sample data: 0    2024-06-02JJ GLOBAL TRADER GMBHKHUSHI INTERNAT...
+1    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+2    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+3    2024-06-04JJ GLOBAL TRADER GMBHKHUSHI INTERNAT...
+4    2024-06-13TRANSFOOD GMBHTHREE CIRCLESSAHAR AIR...
+Name: Unique For Shipment, dtype: object
+2024-08-27 10:36:52,291 - main - DEBUG - 228 - Sorted DataFrame by date, exporter, and importer.
+2024-08-27 10:36:52,293 - main - DEBUG - 231 - Shifted Unique For Shipment column. Sample data: 0    2024-06-02JJ GLOBAL TRADER GMBHKHUSHI INTERNAT...
+6    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+1    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+2    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+5    2024-06-02AGROSKY UGM.K. EXPORTSSAHAR AIR CARG...
+Name: SHIFTED, dtype: object
+2024-08-27 10:36:52,295 - main - DEBUG - 233 - Created SHIPMENT_CHECK column. Sample data: 0    0
+6    1
+1    0
+2    0
+5    0
+Name: SHIPMENT_CHECK, dtype: int32
+2024-08-27 10:36:52,296 - main - INFO - 26 - Finished 'shipment' method in 0.02 seconds.
+2024-08-27 10:36:52,301 - main - INFO - 26 - Finished 'strip_columns' method in 0.03 seconds.
+2024-08-27 10:36:52,301 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,302 - main - INFO - 111 - Calculating quantity from description: OKRA, quantity: 2000
+2024-08-27 10:36:52,302 - main - INFO - 120 - Quantity converted to float: 2000.0
+2024-08-27 10:36:52,303 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,303 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,303 - main - INFO - 111 - Calculating quantity from description: BADAMI MANGO, quantity: 800
+2024-08-27 10:36:52,304 - main - INFO - 120 - Quantity converted to float: 800.0
+2024-08-27 10:36:52,304 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,304 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,305 - main - INFO - 111 - Calculating quantity from description: INDIAN FRESH OKRA, quantity: 350
+2024-08-27 10:36:52,305 - main - INFO - 120 - Quantity converted to float: 350.0
+2024-08-27 10:36:52,305 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,306 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,306 - main - INFO - 111 - Calculating quantity from description: INDIAN FRESH MIXED VEGETABLES, quantity: 109
+2024-08-27 10:36:52,306 - main - INFO - 120 - Quantity converted to float: 109.0
+2024-08-27 10:36:52,307 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,307 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,307 - main - INFO - 111 - Calculating quantity from description: INDIAN FRESH ALPHONSO MANGO (6+6) JOTTA, quantity: 110
+2024-08-27 10:36:52,308 - main - INFO - 120 - Quantity converted to float: 110.0
+2024-08-27 10:36:52,308 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,309 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,309 - main - INFO - 111 - Calculating quantity from description: INDIAN FRESH DRAGON FRUIT, quantity: 20
+2024-08-27 10:36:52,309 - main - INFO - 120 - Quantity converted to float: 20.0
+2024-08-27 10:36:52,309 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,310 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,310 - main - INFO - 111 - Calculating quantity from description: OKRA, quantity: 2750
+2024-08-27 10:36:52,310 - main - INFO - 120 - Quantity converted to float: 2750.0
+2024-08-27 10:36:52,311 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,311 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,311 - main - INFO - 111 - Calculating quantity from description: KESAR MANGO, quantity: 560
+2024-08-27 10:36:52,311 - main - INFO - 120 - Quantity converted to float: 560.0
+2024-08-27 10:36:52,312 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,314 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,318 - main - INFO - 111 - Calculating quantity from description: ALPHONSO MANGO, quantity: 700
+2024-08-27 10:36:52,319 - main - INFO - 120 - Quantity converted to float: 700.0
+2024-08-27 10:36:52,320 - main - INFO - 26 - Finished 'calculate_qty' method in 0.01 seconds.
+2024-08-27 10:36:52,320 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,321 - main - INFO - 111 - Calculating quantity from description: BADAMI MANGO, quantity: 1400
+2024-08-27 10:36:52,321 - main - INFO - 120 - Quantity converted to float: 1400.0
+2024-08-27 10:36:52,321 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,322 - main - INFO - 22 - Starting 'calculate_qty' method.
+2024-08-27 10:36:52,322 - main - INFO - 111 - Calculating quantity from description: MIX VEGETABLES (NTWT 5 KGS PER BOX) (NOS CAN READ AS BOXES ), quantity: 396
+2024-08-27 10:36:52,323 - main - INFO - 120 - Quantity converted to float: 396.0
+2024-08-27 10:36:52,323 - main - INFO - 26 - Finished 'calculate_qty' method in 0.00 seconds.
+2024-08-27 10:36:52,325 - main - INFO - 249 - Regex applied to product descriptions and quantities.
+2024-08-27 10:36:52,326 - main - ERROR - 267 - Error calculating net weight for row 0: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,327 - main - ERROR - 267 - Error calculating net weight for row 6: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,327 - main - ERROR - 267 - Error calculating net weight for row 1: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,327 - main - ERROR - 267 - Error calculating net weight for row 2: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,328 - main - ERROR - 267 - Error calculating net weight for row 5: Unknown UNIT_TYPE: none
+2024-08-27 10:36:52,328 - main - ERROR - 267 - Error calculating net weight for row 7: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,328 - main - ERROR - 267 - Error calculating net weight for row 3: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,328 - main - ERROR - 267 - Error calculating net weight for row 8: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,329 - main - ERROR - 267 - Error calculating net weight for row 9: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,329 - main - ERROR - 267 - Error calculating net weight for row 10: Unknown UNIT_TYPE: NO NUMBER
+2024-08-27 10:36:52,333 - main - INFO - 334 - Starting to apply 'shipment_criteria' function.
+2024-08-27 10:36:52,333 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=2800
+2024-08-27 10:36:52,336 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,336 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=1, DateQty=2800
+2024-08-27 10:36:52,336 - main - INFO - 308 - Condition met: SHIPMENT_CHECK=1 and DateQty<=3000, assigning A_SHIPMENT=1
+2024-08-27 10:36:52,336 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=589
+2024-08-27 10:36:52,337 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,337 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=589
+2024-08-27 10:36:52,337 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,337 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=589
+2024-08-27 10:36:52,338 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,338 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=1, DateQty=589
+2024-08-27 10:36:52,338 - main - INFO - 308 - Condition met: SHIPMENT_CHECK=1 and DateQty<=3000, assigning A_SHIPMENT=1
+2024-08-27 10:36:52,338 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=5410
+2024-08-27 10:36:52,339 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,339 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=5410
+2024-08-27 10:36:52,339 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,339 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=0, DateQty=5410
+2024-08-27 10:36:52,340 - main - INFO - 332 - Condition not met, assigning A_SHIPMENT=0
+2024-08-27 10:36:52,340 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=1, DateQty=5410
+2024-08-27 10:36:52,340 - main - INFO - 311 - Condition met: SHIPMENT_CHECK=1 and DateQty<=6000, assigning A_SHIPMENT=2
+2024-08-27 10:36:52,340 - main - INFO - 306 - Processing row: SHIPMENT_CHECK=1, DateQty=396
+2024-08-27 10:36:52,340 - main - INFO - 308 - Condition met: SHIPMENT_CHECK=1 and DateQty<=3000, assigning A_SHIPMENT=1
+2024-08-27 10:36:52,340 - main - INFO - 336 - Successfully applied 'shipment_criteria' function.
+2024-08-27 10:36:52,340 - main - INFO - 26 - Finished 'apply_regex' method in 0.07 seconds.
+2024-08-27 10:36:52,340 - main - INFO - 344 - apply_regex() method executed successfully.
+2024-08-27 10:36:52,350 - main - INFO - 347 - Filtered dataframes for products: FRESH GARLIC, COCONUT, BABY CORN, CHICKOO, GUAVA, CHILLI, OKRA, POMEGRANATES, POMEGRANATES ARILS, MANGO
+2024-08-27 10:36:52,351 - main - INFO - 351 - Creating pivot table for product dataframe with shape (0, 44).
+2024-08-27 10:36:52,387 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,408 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,408 - main - INFO - 351 - Creating pivot table for product dataframe with shape (0, 44).
+2024-08-27 10:36:52,416 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,422 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,422 - main - INFO - 351 - Creating pivot table for product dataframe with shape (0, 44).
+2024-08-27 10:36:52,426 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,430 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,431 - main - INFO - 351 - Creating pivot table for product dataframe with shape (0, 44).
+2024-08-27 10:36:52,436 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,438 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,438 - main - INFO - 351 - Creating pivot table for product dataframe with shape (0, 44).
+2024-08-27 10:36:52,443 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,447 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,447 - main - INFO - 351 - Creating pivot table for product dataframe with shape (0, 44).
+2024-08-27 10:36:52,452 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,453 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,453 - main - INFO - 351 - Creating pivot table for product dataframe with shape (3, 44).
+2024-08-27 10:36:52,484 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,488 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,488 - main - INFO - 351 - Creating pivot table for product dataframe with shape (0, 44).
+2024-08-27 10:36:52,496 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,501 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,502 - main - INFO - 351 - Creating pivot table for product dataframe with shape (0, 44).
+2024-08-27 10:36:52,504 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,504 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,504 - main - INFO - 351 - Creating pivot table for product dataframe with shape (5, 44).
+2024-08-27 10:36:52,513 - main - INFO - 358 - Pivot table created successfully.
+2024-08-27 10:36:52,516 - main - INFO - 376 - Pivot table transformed and column names updated successfully.
+2024-08-27 10:36:52,516 - main - INFO - 382 - Pivot tables created and transformed for all products.
+2024-08-27 10:36:52,521 - main - INFO - 26 - Finished 'product_report' method in 0.25 seconds.
+2024-08-27 10:36:52,614 - main - INFO - 26 - Finished 'generate_product_report' method in 0.34 seconds.

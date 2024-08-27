@@ -17,14 +17,14 @@ def all_report_from_mysql(query, connection_params,report_name):
     a = df.apply_regex()
     a.to_excel(rf"D:\UserProfile\Desktop\cleaned_data_{report_name}.xlsx", index=False)
 
-    # exporter_report_path = r"D:\UserProfile\Desktop\EXPORTER_REPORT.xlsx"
-    # df.generate_exporter_report(exporter_report_path)
+    exporter_report_path = r"D:\UserProfile\Desktop\EXPORTER_REPORT.xlsx"
+    df.generate_exporter_report(exporter_report_path)
 
-    # product_report_path = rf"D:\UserProfile\Desktop\PRODUCT_REPORT_{report_name}.xlsx"
-    # df.generate_product_report(product_report_path)
+    product_report_path = rf"D:\UserProfile\Desktop\PRODUCT_REPORT_{report_name}.xlsx"
+    df.generate_product_report(product_report_path)
 
-    # importer_report_path = r"D:\UserProfile\Desktop\IMPORTER_REPORT.xlsx"
-    # df.generate_importer_report(importer_report_path)
+    importer_report_path = r"D:\UserProfile\Desktop\IMPORTER_REPORT.xlsx"
+    df.generate_importer_report(importer_report_path)
 
 connection_params = {
     'host': 'localhost',
@@ -34,9 +34,12 @@ connection_params = {
 }
 
 query = """
-select * from import_export
-where foreign_country like 'Netherlands'
+SELECT *
+FROM import_export
+WHERE foreign_country LIKE 'Germany'
+  AND date BETWEEN '2024-06-01' AND '2024-07-01';
+
 
 """
 
-all_report_from_mysql(query, connection_params,report_name='neetherlands')
+all_report_from_mysql(query, connection_params,report_name='Germany')
