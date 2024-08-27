@@ -23,6 +23,7 @@ xlwings = "^0.32.0"
 cryptography = "^43.0.0"
 logtail-python = "^0.3.0"
 python-dotenv = "^1.0.1"
+sqlalchemy = "^2.0.32"
 
 
 [build-system]
