@@ -3,7 +3,7 @@ import numpy as np
 from functools import lru_cache
 import time
 import re
-from log_file.logging_config import logger
+from logging_config import logger
 
 start_time = time.time()
 
@@ -68,7 +68,7 @@ class KayBeeExports:
         'MANGO'),
 
         (df['PRODUCT_DESCRIPTION'].str.contains(r'\bBaby|BABYCORN|BABY CORN\b', case=False, na=False) &
-        ~df['PRODUCT_DESCRIPTION'].str.contains(r'\bOKRA|POTATO|frozen|IQF|CUT|BRINE|ACETIC|ACID|ONION|BANANAS|BANANA\b', case=False, na=False),
+        ~df['PRODUCT_DESCRIPTION'].str.contains(r'\bOKRA|POTATO|frozen|IQF|CUT|BRINE|ACETIC|ACID|ONION|BANANAS|BANANA|WHEAT|BABYVITA|BITTER\b', case=False, na=False),
         'BABY CORN'),
 
         (df['PRODUCT_DESCRIPTION'].str.contains(r'\bPOME|ANAR|POMEGRANATE\b', case=False, na=False) &

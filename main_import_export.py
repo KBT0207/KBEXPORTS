@@ -13,21 +13,26 @@ def fetch_data_from_mysql(query, connection_params):
     conn.close()
     return df
 
-def all_report_from_mysql(query, connection_params,report_name):
+def all_report_from_mysql(query, connection_params):
+    input_report_name = input(str("Enter The Report Name: "))
     data = fetch_data_from_mysql(query, connection_params)
     df = KayBeeExports(data)
+
+    output_dir = r"D:\UserProfile\Desktop\KB"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     
-    a = df.apply_regex()
-    a.to_excel(rf"D:\UserProfile\Desktop\cleaned_data_{report_name}.xlsx", index=False)
+    clean_data = df.apply_regex()
+    clean_data.to_excel(rf"D:\UserProfile\Desktop\KB\DumpData_{input_report_name}.xlsx", index=False)
 
-    exporter_report_path = r"D:\UserProfile\Desktop\EXPORTER_REPORT.xlsx"
-    df.generate_exporter_report(exporter_report_path)
+    # exporter_report_path = rf"D:\UserProfile\Desktop\KB\EXPORTER_REPORT_{input_report_name}.xlsx"
+    # df.generate_exporter_report(exporter_report_path)
 
-    product_report_path = rf"D:\UserProfile\Desktop\PRODUCT_REPORT_{report_name}.xlsx"
-    df.generate_product_report(product_report_path)
+    # product_report_path = rf"D:\UserProfile\Desktop\KB\PRODUCT_REPORT_{input_report_name}.xlsx"
+    # df.generate_product_report(product_report_path)
 
-    importer_report_path = r"D:\UserProfile\Desktop\IMPORTER_REPORT.xlsx"
-    df.generate_importer_report(importer_report_path)
+    # importer_report_path = rf"D:\UserProfile\Desktop\KB\IMPORTER_REPORT_{input_report_name}.xlsx"
+    # df.generate_importer_report(importer_report_path)
 
 connection_params = {
     'host': os.getenv('DB_HOST'),
@@ -38,9 +43,11 @@ connection_params = {
 
 query = """
 SELECT *
-FROM import_export
-WHERE foreign_country LIKE 'Norway'
-  AND date BETWEEN '2022-01-01' AND '2024-07-31';
+FROM import_export where
+date BETWEEN '2024-01-01' AND '2024-01-05';
+
 """
 
-all_report_from_mysql(query, connection_params,report_name='Norway')
+
+all_report_from_mysql(query, connection_params)
+

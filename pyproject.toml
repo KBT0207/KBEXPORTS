@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "poetry add"
+name = "kbexports"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Vivek <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -10,22 +10,18 @@ python = "^3.12"
 pandas = "^2.2.2"
 xlsxwriter = "^3.2.0"
 openpyxl = "^3.1.5"
-scikit-learn = "^1.5.1"
-fuzzywuzzy = {extras = ["speedup"], version = "^0.18.0"}
-matplotlib = "3.8.0"
 dask = "^2024.7.1"
 xlrd = "^2.0.1"
 requests = "^2.32.3"
 pymysql = "^1.1.1"
 yagmail = "^0.15.293"
-logtail = "^1.0.1"
-xlwings = "^0.32.0"
-cryptography = "^43.0.0"
-logtail-python = "^0.3.0"
+cryptography = "^43.0.3"
 python-dotenv = "^1.0.1"
 sqlalchemy = "^2.0.32"
-
+pillow = "^11.0.0"
+logtail-python = "^0.3.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+package-mode = false  # Keep only one of these lines
